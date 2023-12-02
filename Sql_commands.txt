@@ -1,0 +1,9 @@
+To create database:
+->CREATE DATABASE myDB;
+!myDB - database name
+
+To switch default database:
+->Use myDB;
+
+To make database read only:
+->ALTER DATABASE myDB READ ONLY = 1;
