@@ -7,3 +7,69 @@ To switch default database:
 
 To make database read only:
 ->ALTER DATABASE myDB READ ONLY = 1;
+
+To drop database:
+-> DROP database myDB;
+
+To make database back to read only mode:
+->ALTER DATABASE myDB READ ONLY = 0;
+
+To create a table in database:
+->CREATE TABLE Employee_data(
+employee_id INT,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+daily_pay DECIMAL(5,2),
+joined_date date
+
+);
+
+To select a table or column:
+-> SELECT * FROM myDB;
+!*mentions all the column name
+
+To rename a table use below command:
+->RENAME TABLE Employee_data TO workers_data;
+
+To add a column to the table:
+->ALTER TABLE employee_data
+ADD phone_numbers VARCHAR(12);
+
+To rename a column:
+->ALTER TABLE employee_data RENAME column phone_numbers TO email;
+
+To modify the table use below command:
+->ALTER TABLE employee_data modify column email VARCHAR(100);
+
+To rearranges the column use below command:
+->ALTER TABLE employee_data MODIFY email VARCHAR(100) AFTER last_name;
+
+select * from employee_data;
+
+To move to first column:
+->ALTER TABLE employee_data MODIFY email VARCHAR(100) FIRST;
+
+To drop colum from table:
+->ALTER TABLE employee_data DROP COLUMN email;
+
+To insert values into table:
+->insert into employee_data values(1,"Dinesh","M",250,"2023-10-01");
+
+SELECT * FROM employee_data;
+
+To insert multiple values into table:
+->insert into employee_data values
+(2,"Suresh","kumar",250.00,"2023-10-01"),
+(3,"Mike","S",300,"2023-10-01"),
+(4,"Raju","A",250,"2023-10-01"),
+(5,"Amin","Mohamed",280,"2023-10-01");
+
+
+SELECT * FROM employee_data;
+
+To insert data into particular row:
+->insert into employee_data(employee_id,first_name,last_name) values
+(6,"Tamil","Arasan");
+
+
+SELECT * FROM employee_data;
