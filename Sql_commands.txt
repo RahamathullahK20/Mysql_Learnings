@@ -97,3 +97,65 @@ To delete use below command;
 -> Delete from employee_data where employee_id = 6;
 select * from employee_data;
 
+----------------------------------------------------------------------------------------------
+AUTO COMMIT, COMMIT, ROLLBACK
+
+-> SET AUTOCOMMIT = OFF;
+
+-> COMMIT;
+
+->select * from employee_data;
+
+!Deleting the values after making restore point.
+
+-> Delete from employee_data;
+-> select * from employee_data;
+
+!To get values back use below command;
+->ROLLBACK
+
+!You will see all the records back
+
+------------------------------------------------------------------------------------------------------
+DATE and Time
+
+->CREATE TABLE TEST(
+my_date DATE,
+my_time TIME,
+my_datetime DATETIME
+)
+
+SELECT * FROM TEST;
+
+-------------------------------------------------------------------------------------------------
+Insert Date and time
+->INSERT INTO test values(current_date(),current_time,now());
+
+select * from test;
+
+-------------------------------------------------------------------------------------------------
+To get yesterday or next day - date or time use below command;
+
+INSERT INTO test values(current_date() + 1,current_time +1,now());
+
+select * from test;
+
+!+1 for next day and -1 for previous day
+--------------------------------------------------------------------------------------------------
+UNIQUE - keyword 
+
+->CREATE TABLE products(
+product_id INT,
+product_name VARCHAR(25) UNIQUE,
+price DECIMAL (4,2)
+);
+
+SELECT * FROM products;
+---------------------------------------------------------------------------------------------------
+To add a constraint manually
+
+ALTER TABLE products
+ADD constraint
+UNIQUE(product_name);
+---------------------------------------------------------------------------------------------------
+->INSERT INTO Products values (101,"Samosa","15"), (102,"Tea",15), (103,"Coffee",18), (104,"Special Tea",20)	
