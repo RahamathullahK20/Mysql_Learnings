@@ -73,3 +73,27 @@ To insert data into particular row:
 
 
 SELECT * FROM employee_data;
+
+---------------------------------------------------------------------------------------------
+Update and Delete
+
+->Update employee_data 
+SET daily_pay = 250
+where employee_id = 7;
+
+SELECT * from employee_data;
+
+----------------------------------------------------------------------------------------------
+To update multiple values (use commas symbol)
+
+->update employee_data set first_name = "Xyz", last_name = "ABC" where employee_id = 6;
+SELECT * from employee_data;
+
+
+!If we didn't use where condition it will apply for all the rows values of respective columns
+-----------------------------------------------------------------------------------------------
+
+To delete use below command;
+-> Delete from employee_data where employee_id = 6;
+select * from employee_data;
+
